@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гүйцэх хугацааг тооцоолох</title>
+</head>
+<body>
+    <script>
+        function calculateCatchUpTime() {
+
+            let zai = parseFloat(window.prompt("Зайг км-ээр оруулна уу:"), 10);
+            let w = 25;
+            let r = 18;
+            let x = w - r;
+
+            let timeInHours = zai / x;
+            let minutes = Math.floor(timeInHours * 60);
+            let seconds = Math.round((timeInHours * 3600) % 60);
+
+            document.write(`${minutes} минут ${seconds} секунд`);
+        }
+        calculateCatchUpTime();
+    </script>
+</body>
+</html>
+

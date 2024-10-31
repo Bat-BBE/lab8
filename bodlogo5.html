@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тооны 2 зэрэг болон язгуурыг олох</title>
+</head>
+<body>
+    <h2>Тооны 2 зэрэг болон язгуурыг олох</h2>
+    <script>
+        function calculatePowerAndRoot() {
+            const currentHour = new Date().getHours();
+            const n = parseFloat(window.prompt("Тоо тоогоо оруулна уу:"));
+            
+            let result;
+            if (currentHour >= 7 && currentHour < 12) {
+                result = n * n;
+                document.write(`Таны оруулсан тооны 2 зэрэг: ${result}`);
+            } else if (currentHour >= 17 && currentHour < 22) {
+                if (n < 0) {
+                    document.write("Сөрөг тооны язгуурыг олох боломжгүй.");
+                } else {
+                    result = Math.sqrt(n);
+                    document.write(`Таны оруулсан тооны язгуур: ${result}`);
+                }
+            } else {
+                document.write("Энэ цаг нь өглөө эсвэл оройн хугацаанд байхгүй байна.");
+            }
+        }
+        calculatePowerAndRoot();
+    </script>
+</body>
+</html>

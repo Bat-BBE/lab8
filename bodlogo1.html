@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Check</title>
+</head>
+<body>
+    <script>
+        function checkDigitSumPalindrome() {
+            let n = parseInt(window.prompt("Тоо оруулна уу:"), 10);
+            let sum = 0;
+            
+            while (n > 0) {
+                sum += n % 10;
+                n = Math.floor(n / 10);
+            }
+            
+            let urvuu = 0;
+            let original = sum;
+    
+            while (sum > 0) {
+                let suul = sum % 10;
+                urvuu = urvuu * 10 + suul;
+                sum = Math.floor(sum / 10);
+            }
+            if (urvuu == original) {
+                document.write("Цифрүүдийн нийлбэр нь палиндром мөн");
+            } else {
+                document.write("Цифрүүдийн нийлбэр нь палиндром биш");
+            }
+        }
+        checkDigitSumPalindrome();
+
+    </script>
+</body>
+</html>
+
+

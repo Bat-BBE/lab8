@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Байшингийн байрлал олох</title>
+</head>
+<body> 
+    <script>
+        function findApartmentLocation() {
+            const toot = parseInt(window.prompt("Тоотын дугаарыг оруулна уу:"), 10);
+            const davhar = 9; 
+            const orts = 3; 
+            const davhartail = 4;
+
+            const niitail = davhar * orts * davhartail;
+
+            if (toot < 1 || toot > niitail) {
+                document.write("Танилцуулсан тоот хэт их эсвэл хэт бага байна.");
+                return;
+            }
+            const section = Math.ceil(toot / (davhar * davhartail));
+            const floor = Math.ceil(((toot - (section - 1) * davhar * davhartail)) / davhartail); 
+            const door = ((toot - (section - 1) * davhar * davhartail - 1) % davhartail) + 1;
+
+            document.write(`${section} орц, ${floor} давхар, ${door} хаалга`);
+        }
+        findApartmentLocation();
+    </script>
+</body>
+</html>
+
